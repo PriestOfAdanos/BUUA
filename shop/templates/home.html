@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block text %}
+<form action="/transaction_summary/" method="post">
+    {% for product in all_products %}
+    <img src="{{product.photo.url}}" /><input type="checkbox" name="product" value={{product.id}} checked> I have a car<br>
+{% endfor %}
+    {% csrf_token %}
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
+

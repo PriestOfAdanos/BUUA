@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block text %}
+
+{% for order in orders %}
+   {%for i in order.products%}
+        {{i.id}}
+    {% endfor %}
+    {{order.comment}}
+    {{order.id}}
+{% endfor %}
+
+{% endblock %}
